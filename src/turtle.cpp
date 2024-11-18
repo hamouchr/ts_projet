@@ -46,8 +46,8 @@ Turtle::Turtle(const ros::NodeHandle &nh, const QImage &turtle_image,
       pen_(QColor(DEFAULT_PEN_R, DEFAULT_PEN_G, DEFAULT_PEN_B)) {
   pen_.setWidth(3);
 
-  // velocity_sub_ = nh_.subscribe("cmd_vel", 1, &Turtle::velocityCallback,
-  // this);
+   velocity_sub_ = nh_.subscribe("cmd_vel", 1, &Turtle::velocityCallback,
+   this);
   velocityLin_sub_ =
       nh_.subscribe("cmd_vel_linear_x", 1, &Turtle::velocityLinCallback, this);
   velocityAng_sub_ =
